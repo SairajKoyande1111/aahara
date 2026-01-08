@@ -106,18 +106,22 @@ const HeroSection = () => {
           </div>
 
           {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-400">
-            {["100% Pure Veg 🌿", "Multi Cuisine", "Fresh & Hygienic"].map(
-              (item) => (
-                <span
-                  key={item}
-                  className="text-white font-bold text-xs sm:text-lg flex items-center gap-2 drop-shadow-md bg-black/20 px-3 py-1 sm:px-4 sm:py-1 rounded-full backdrop-blur-sm"
-                >
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#7CB342] rounded-full" />
-                  {item}
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 pt-8 sm:pt-12">
+            {[
+              { text: "100% Pure Veg 🌿", delay: "animation-delay-400" },
+              { text: "Multi Cuisine", delay: "animation-delay-500" },
+              { text: "Fresh & Hygienic", delay: "animation-delay-600" },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className={`animate-fade-up ${item.delay} group`}
+              >
+                <span className="text-white font-bold text-sm sm:text-xl flex items-center gap-3 drop-shadow-lg bg-white/10 px-6 py-2 sm:px-8 sm:py-3 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-[#7CB342]/20 hover:border-[#7CB342]/50 hover:scale-105">
+                  <span className="w-2 h-2 sm:w-3 sm:h-3 bg-[#7CB342] rounded-full shadow-[0_0_10px_#7CB342] animate-pulse" />
+                  {item.text}
                 </span>
-              ),
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
