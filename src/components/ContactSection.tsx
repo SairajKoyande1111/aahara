@@ -70,10 +70,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white overflow-hidden">
+    <section id="contact" className="py-12 bg-white overflow-hidden">
       <div className="container-custom mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,10 +110,10 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-12"
+            className="space-y-8"
           >
             {/* Contact Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
                 <div key={info.title} className="space-y-3">
                   <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
@@ -137,7 +137,7 @@ const ContactSection = () => {
                 allowFullScreen
                 loading="lazy"
                 title="Aahara Location"
-                className="grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full transition-all duration-700"
               />
               <div className="absolute inset-0 pointer-events-none border-[12px] border-white/10 rounded-[2.5rem]" />
             </div>
