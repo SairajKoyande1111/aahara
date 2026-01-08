@@ -102,16 +102,16 @@ const ContactSection = () => {
           </motion.p>
         </div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           {/* Form Side - First on mobile */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative w-full order-1 lg:order-2"
+            className="relative w-full order-1 lg:order-2 flex"
           >
-            <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100">
+            <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100 w-full flex flex-col">
               {/* Form Tabs */}
               <div className="flex gap-4 mb-10 bg-gray-50 p-1.5 rounded-2xl">
                 <button
@@ -128,117 +128,119 @@ const ContactSection = () => {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Full Name</label>
-                    <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                      className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
-                    <Input
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 98765 43210"
-                      required
-                      className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
-                    />
-                  </div>
-                </div>
-
-                {activeTab === 'reservation' ? (
-                  <>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-gray-700 ml-1">Date</label>
-                        <div className="relative">
-                          <Input
-                            name="date"
-                            type="date"
-                            value={formData.date}
-                            onChange={handleChange}
-                            required
-                            className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
-                          />
-                          <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-gray-700 ml-1">Time</label>
-                        <div className="relative">
-                          <Input
-                            name="time"
-                            type="time"
-                            value={formData.time}
-                            onChange={handleChange}
-                            required
-                            className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
-                          />
-                          <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-gray-700 ml-1">Guests</label>
-                        <div className="relative">
-                          <Input
-                            name="guests"
-                            type="number"
-                            min="1"
-                            max="20"
-                            value={formData.guests}
-                            onChange={handleChange}
-                            placeholder="2"
-                            required
-                            className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
-                          />
-                          <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                        </div>
-                      </div>
+              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-gray-700 ml-1">Full Name</label>
+                      <Input
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        required
+                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                      />
                     </div>
-                  </>
-                ) : (
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
+                      <Input
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+91 98765 43210"
+                        required
+                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {activeTab === 'reservation' ? (
+                    <>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-sm font-bold text-gray-700 ml-1">Date</label>
+                          <div className="relative">
+                            <Input
+                              name="date"
+                              type="date"
+                              value={formData.date}
+                              onChange={handleChange}
+                              required
+                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                            />
+                            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-sm font-bold text-gray-700 ml-1">Time</label>
+                          <div className="relative">
+                            <Input
+                              name="time"
+                              type="time"
+                              value={formData.time}
+                              onChange={handleChange}
+                              required
+                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                            />
+                            <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-sm font-bold text-gray-700 ml-1">Guests</label>
+                          <div className="relative">
+                            <Input
+                              name="guests"
+                              type="number"
+                              min="1"
+                              max="20"
+                              value={formData.guests}
+                              onChange={handleChange}
+                              placeholder="2"
+                              required
+                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                            />
+                            <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
+                      <Input
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="john@example.com"
+                        required
+                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                      />
+                    </div>
+                  )}
+
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
-                    <Input
-                      name="email"
-                      type="email"
-                      value={formData.email}
+                    <label className="text-sm font-bold text-gray-700 ml-1">
+                      {activeTab === 'reservation' ? 'Special Requests' : 'Your Message'}
+                    </label>
+                    <Textarea
+                      name="message"
+                      value={formData.message}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder={activeTab === 'reservation' ? "Any dietary requirements or special occasions?" : "How can we help you today?"}
+                      rows={4}
                       required
-                      className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                      className="rounded-[2rem] bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all p-6 resize-none"
                     />
                   </div>
-                )}
-
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700 ml-1">
-                    {activeTab === 'reservation' ? 'Special Requests' : 'Your Message'}
-                  </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder={activeTab === 'reservation' ? "Any dietary requirements or special occasions?" : "How can we help you today?"}
-                    rows={4}
-                    required
-                    className="rounded-[2rem] bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all p-6 resize-none"
-                  />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-16 rounded-[2rem] bg-[#7CB342] text-white text-lg font-bold hover:bg-[#689f38] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#7CB342]/20"
+                  className="w-full h-16 rounded-[2rem] bg-[#7CB342] text-white text-lg font-bold hover:bg-[#689f38] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#7CB342]/20 mt-8"
                 >
                   {isSubmitting ? (
                     'Processing...'
@@ -262,36 +264,38 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-12 w-full order-2 lg:order-1"
+            className="w-full order-2 lg:order-1 flex"
           >
-            {/* Contact Grid - 4 items in grid */}
-            <div className="grid grid-cols-2 gap-8">
-              {contactInfo.map((info, index) => (
-                <div key={info.title} className="space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
-                    <info.icon className="w-6 h-6" />
+            <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100 w-full flex flex-col space-y-12">
+              {/* Contact Grid - 4 items in grid */}
+              <div className="grid grid-cols-2 gap-8 flex-grow">
+                {contactInfo.map((info, index) => (
+                  <div key={info.title} className="space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
+                      <info.icon className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">{info.title}</h4>
+                    <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm">
+                      {info.content}
+                    </p>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900">{info.title}</h4>
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm">
-                    {info.content}
-                  </p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            {/* Map Preview - Last on mobile */}
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[350px] group">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.89209590515!2d73.1026023!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Aahara Location"
-                className="w-full h-full transition-all duration-700"
-              />
-              <div className="absolute inset-0 pointer-events-none border-[12px] border-white/10 rounded-[2.5rem]" />
+              {/* Map Preview - Last on mobile */}
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-xl h-[300px] lg:h-[350px] group border border-gray-100">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.89209590515!2d73.1026023!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Aahara Location"
+                  className="w-full h-full transition-all duration-700"
+                />
+                <div className="absolute inset-0 pointer-events-none border-[12px] border-white/10 rounded-[2.5rem]" />
+              </div>
             </div>
           </motion.div>
         </div>
