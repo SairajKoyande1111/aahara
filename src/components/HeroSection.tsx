@@ -49,7 +49,6 @@ const HeroSection = () => {
             <span
               className="text-[#7CB342] block mb-2 font-black text-6xl sm:text-8xl lg:text-9xl italic font-serif"
               style={{
-                WebkitTextStroke: "1.5px #2E4B1A",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
                 fontFamily: "cursive",
               }}
