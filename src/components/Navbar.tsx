@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center justify-end flex-1">
-            <Button className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-lg px-8 py-6" size="lg" asChild>
+            <Button className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-lg px-8 py-6 rounded-full shadow-md transition-all hover:scale-105" size="lg" asChild>
               <a href="#contact">Reserve Table</a>
             </Button>
           </div>
