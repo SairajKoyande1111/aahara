@@ -47,10 +47,10 @@ const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-300 drop-shadow-lg opacity-0 [animation-fill-mode:forwards]">
             <span
-              className="text-[#7CB342] block mb-2 font-bold text-5xl sm:text-7xl lg:text-8xl italic font-serif"
+              className="text-[#7CB342] block mb-2 font-black text-6xl sm:text-8xl lg:text-9xl italic font-serif"
               style={{
-                WebkitTextStroke: "1px white",
-                textShadow: "0 0 2px white",
+                WebkitTextStroke: "0.5px white",
+                textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
                 fontFamily: "cursive",
               }}
             >
