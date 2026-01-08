@@ -62,7 +62,7 @@ const HeroSection = () => {
                 textShadow: "0 0 1px #7CB342",
               }}
             >
-              Multi Cuisine
+              Multi Cuisine Est. 2024
             </span>
           </h1>
 
