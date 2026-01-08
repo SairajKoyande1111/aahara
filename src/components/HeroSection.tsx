@@ -80,7 +80,7 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <div className="min-h-[3em] sm:min-h-[2em] flex items-center justify-center">
-            <p className="text-white/90 text-lg sm:text-2xl max-w-4xl mx-auto font-medium tracking-wide">
+            <p className="text-white text-lg sm:text-2xl max-w-4xl mx-auto font-black tracking-wide">
               {displayText}
               <span className="animate-pulse">|</span>
             </p>
@@ -116,7 +116,7 @@ const HeroSection = () => {
                 key={item.text}
                 className={`animate-fade-up ${item.delay} group flex-1 min-w-0`}
               >
-                <span className="text-white font-bold text-[10px] sm:text-xl flex items-center justify-center gap-1 sm:gap-3 drop-shadow-lg bg-white/10 px-2 py-2 sm:px-8 sm:py-3 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-[#7CB342]/20 hover:border-[#7CB342]/50 hover:scale-105 whitespace-nowrap">
+                <span className="text-white font-black text-[10px] sm:text-xl flex items-center justify-center gap-1 sm:gap-3 drop-shadow-lg bg-white/10 px-2 py-2 sm:px-8 sm:py-3 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-[#7CB342]/20 hover:border-[#7CB342]/50 hover:scale-105 whitespace-nowrap">
                   <span className="w-1.5 h-1.5 sm:w-3 sm:h-3 bg-[#7CB342] rounded-full shadow-[0_0_10px_#7CB342] animate-pulse flex-shrink-0" />
                   {item.text}
                 </span>
