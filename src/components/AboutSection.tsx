@@ -1,35 +1,38 @@
 import { motion } from 'framer-motion';
-import { Play, Utensils, Award, Clock } from 'lucide-react';
+import { Utensils, Award, Clock, Play } from 'lucide-react';
 import aboutVideo from '@assets/about_video.mp4';
 import kebabImg from '@assets/sekh_kebab.jpg';
 import paneerImg from '@assets/paneer_tikka.jpg';
 import pastaImg from '@assets/white_sauce_pasta.jpg';
+import kajuMasalaImg from '@assets/kaju_masala.jpg';
+import roseMilkImg from '@assets/rose_milkshake.jpg';
 
 const AboutSection = () => {
+  const carouselImages = [kebabImg, paneerImg, pastaImg, kajuMasalaImg, roseMilkImg];
+
   return (
     <section id="about" className="section-padding bg-cream relative overflow-hidden">
       <div className="container-custom mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          {/* Visual Side: Video & Image Slide */}
+          {/* Visual Side: Portrait Video & Overlaid Photos */}
           <div className="relative group perspective-1000">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-square md:aspect-video lg:aspect-square"
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] md:w-[80%] mx-auto"
             >
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               >
                 <source src={aboutVideo} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               
               <div className="absolute bottom-8 left-8 right-8">
                 <motion.div
@@ -45,23 +48,33 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            {/* Floating Image Cards */}
+            {/* Overlaid Photos */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: -15, x: -20 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -top-10 -right-10 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block"
+              className="absolute top-10 -left-6 w-40 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
             >
-              <img src={kebabImg} alt="Sekh Kebab" className="w-full h-full object-cover" />
+              <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 5 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: 15, x: 20 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-10 -right-10 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block"
+              className="absolute -bottom-6 -right-6 w-44 h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
+            >
+              <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="absolute top-1/2 -right-12 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10 -translate-y-1/2"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
@@ -75,10 +88,6 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <div className="inline-flex items-center gap-2 text-[#7CB342] bg-[#7CB342]/10 px-4 py-2 rounded-full">
-                <Play className="w-4 h-4 fill-current" />
-                <span className="text-sm font-bold uppercase tracking-widest">Premium Dining Experience</span>
-              </div>
               <h2 className="font-display text-5xl lg:text-7xl font-bold text-foreground leading-tight">
                 Crafting <span className="text-[#7CB342] italic">Memories</span> Over Global Plates
               </h2>
@@ -111,16 +120,16 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Sliding Visual Strip */}
-        <div className="mt-32 relative overflow-hidden h-64 rounded-[3rem]">
+        {/* Sliding Visual Strip - Full View Images */}
+        <div className="mt-32 relative overflow-hidden h-80 rounded-[3rem]">
           <motion.div
-            animate={{ x: [0, -1000] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            animate={{ x: [0, -2000] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="flex gap-8 absolute whitespace-nowrap"
           >
-            {[kebabImg, paneerImg, pastaImg, kebabImg, paneerImg, pastaImg].map((img, i) => (
-              <div key={i} className="w-[400px] h-64 rounded-3xl overflow-hidden shadow-lg flex-shrink-0">
-                <img src={img} alt="Dish" className="w-full h-full object-cover" />
+            {[...carouselImages, ...carouselImages, ...carouselImages].map((img, i) => (
+              <div key={i} className="w-[500px] h-80 rounded-3xl overflow-hidden shadow-lg flex-shrink-0">
+                <img src={img} alt="Dish" className="w-full h-full object-contain bg-white" />
               </div>
             ))}
           </motion.div>
