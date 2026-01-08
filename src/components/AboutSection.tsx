@@ -22,7 +22,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] w-full max-w-[400px]"
+              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-black aspect-[2/3] w-full max-w-[480px]"
             >
               <video
                 autoPlay
@@ -39,9 +39,9 @@ const AboutSection = () => {
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20"
+                  className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20"
                 >
-                  <p className="text-white font-medium text-base leading-relaxed">
+                  <p className="text-white font-medium text-lg leading-relaxed">
                     "Every dish at Aahara is a story of tradition, crafted with passion and served with love."
                   </p>
                 </motion.div>
@@ -54,7 +54,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -top-10 -left-6 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
+              className="absolute -top-6 -left-10 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
             >
               <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="absolute top-16 -left-12 w-24 h-36 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute top-24 -left-16 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
             </motion.div>
@@ -75,7 +75,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-8 -right-2 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
+              className="absolute -bottom-10 -right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="absolute bottom-12 -right-8 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute bottom-20 -right-14 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
@@ -99,8 +99,8 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full whitespace-nowrap lg:whitespace-normal">
-                Crafting <span className="text-[#7CB342]">Memories</span><br className="hidden lg:block" /> Over Global Plates
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full">
+                Crafting <span className="text-[#7CB342]">Memories</span><br /> Over Global Plates
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-[550px]">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
