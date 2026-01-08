@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Right Side: Carousel */}
-          <div className="lg:w-2/3 relative h-[320px] sm:h-[450px] w-full flex items-center justify-center mt-[-100px] sm:-mt-12 lg:-mt-20">
+          <div className="lg:w-2/3 relative h-[350px] sm:h-[450px] w-full flex items-center justify-center mt-0 sm:mt-0 lg:mt-0">
             <div className="relative w-full max-w-lg perspective-1000">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === currentIndex;
@@ -109,7 +109,7 @@ const TestimonialsSection = () => {
                 return (
                   <motion.div
                     key={testimonial.name}
-                    className={`absolute top-0 left-0 w-full transition-all duration-700 ease-in-out ${positionClass}`}
+                    className={`absolute top-1/2 left-0 w-full -translate-y-1/2 transition-all duration-700 ease-in-out ${positionClass}`}
                   >
                     <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
                       <div className="absolute top-0 right-0 p-4 sm:p-6 text-leaf/10">
