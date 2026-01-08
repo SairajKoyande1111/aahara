@@ -111,27 +111,27 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="relative w-full order-1 lg:order-2 flex"
           >
-            <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100 w-full flex flex-col">
+            <div className="bg-white rounded-[3rem] shadow-2xl p-6 sm:p-10 border border-gray-100 w-full flex flex-col">
               {/* Form Tabs */}
-              <div className="flex gap-4 mb-10 bg-gray-50 p-1.5 rounded-2xl">
+              <div className="flex gap-4 mb-8 bg-gray-50 p-1.5 rounded-2xl">
                 <button
                   onClick={() => setActiveTab('message')}
-                  className={`flex-1 py-3 rounded-xl font-bold transition-all ${activeTab === 'message' ? 'bg-white text-[#7CB342] shadow-md' : 'text-gray-400 hover:text-gray-600'}`}
+                  className={`flex-1 py-2.5 rounded-xl font-bold transition-all ${activeTab === 'message' ? 'bg-white text-[#7CB342] shadow-md' : 'text-gray-400 hover:text-gray-600'}`}
                 >
                   Send Message
                 </button>
                 <button
                   onClick={() => setActiveTab('reservation')}
-                  className={`flex-1 py-3 rounded-xl font-bold transition-all ${activeTab === 'reservation' ? 'bg-white text-[#7CB342] shadow-md' : 'text-gray-400 hover:text-gray-600'}`}
+                  className={`flex-1 py-2.5 rounded-xl font-bold transition-all ${activeTab === 'reservation' ? 'bg-white text-[#7CB342] shadow-md' : 'text-gray-400 hover:text-gray-600'}`}
                 >
                   Reserve Table
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-between">
-                <div className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
+              <form onSubmit={handleSubmit} className="space-y-4 flex-grow flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-1">
                       <label className="text-sm font-bold text-gray-700 ml-1">Full Name</label>
                       <Input
                         name="name"
@@ -139,10 +139,10 @@ const ContactSection = () => {
                         onChange={handleChange}
                         placeholder="John Doe"
                         required
-                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                        className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <label className="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
                       <Input
                         name="phone"
@@ -151,15 +151,15 @@ const ContactSection = () => {
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
                         required
-                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                        className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
                       />
                     </div>
                   </div>
 
                   {activeTab === 'reservation' ? (
                     <>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div className="space-y-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="space-y-1">
                           <label className="text-sm font-bold text-gray-700 ml-1">Date</label>
                           <div className="relative">
                             <Input
@@ -168,12 +168,12 @@ const ContactSection = () => {
                               value={formData.date}
                               onChange={handleChange}
                               required
-                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                              className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-10"
                             />
-                            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           </div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           <label className="text-sm font-bold text-gray-700 ml-1">Time</label>
                           <div className="relative">
                             <Input
@@ -182,12 +182,12 @@ const ContactSection = () => {
                               value={formData.time}
                               onChange={handleChange}
                               required
-                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                              className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-10"
                             />
-                            <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Clock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           </div>
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           <label className="text-sm font-bold text-gray-700 ml-1">Guests</label>
                           <div className="relative">
                             <Input
@@ -199,15 +199,15 @@ const ContactSection = () => {
                               onChange={handleChange}
                               placeholder="2"
                               required
-                              className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-12"
+                              className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all pl-10"
                             />
-                            <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                           </div>
                         </div>
                       </div>
                     </>
                   ) : (
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
                       <Input
                         name="email"
@@ -216,12 +216,12 @@ const ContactSection = () => {
                         onChange={handleChange}
                         placeholder="john@example.com"
                         required
-                        className="h-14 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
+                        className="h-12 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all"
                       />
                     </div>
                   )}
 
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     <label className="text-sm font-bold text-gray-700 ml-1">
                       {activeTab === 'reservation' ? 'Special Requests' : 'Your Message'}
                     </label>
@@ -230,9 +230,9 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder={activeTab === 'reservation' ? "Any dietary requirements or special occasions?" : "How can we help you today?"}
-                      rows={4}
+                      rows={3}
                       required
-                      className="rounded-[2rem] bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all p-6 resize-none"
+                      className="rounded-[2rem] bg-gray-50 border-transparent focus:bg-white focus:border-[#7CB342] focus:ring-[#7CB342]/20 transition-all p-5 resize-none text-sm"
                     />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ const ContactSection = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-16 rounded-[2rem] bg-[#7CB342] text-white text-lg font-bold hover:bg-[#689f38] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#7CB342]/20 mt-8"
+                  className="w-full h-14 rounded-[2rem] bg-[#7CB342] text-white text-base font-bold hover:bg-[#689f38] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-[#7CB342]/20 mt-6"
                 >
                   {isSubmitting ? (
                     'Processing...'
@@ -266,15 +266,15 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="w-full order-2 lg:order-1 flex"
           >
-            <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100 w-full flex flex-col space-y-12">
+            <div className="bg-white rounded-[3rem] shadow-2xl p-6 sm:p-10 border border-gray-100 w-full flex flex-col space-y-8">
               {/* Contact Grid - 4 items in grid */}
-              <div className="grid grid-cols-2 gap-8 flex-grow">
+              <div className="grid grid-cols-2 gap-6 flex-grow">
                 {contactInfo.map((info, index) => (
-                  <div key={info.title} className="space-y-3">
-                    <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
-                      <info.icon className="w-6 h-6" />
+                  <div key={info.title} className="space-y-2">
+                    <div className="w-10 h-10 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
+                      <info.icon className="w-5 h-5" />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900">{info.title}</h4>
+                    <h4 className="text-lg font-bold text-gray-900">{info.title}</h4>
                     <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm">
                       {info.content}
                     </p>
@@ -283,7 +283,7 @@ const ContactSection = () => {
               </div>
 
               {/* Map Preview - Last on mobile */}
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-xl h-[300px] lg:h-[350px] group border border-gray-100">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-xl h-[250px] lg:h-[280px] group border border-gray-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.89209590515!2d73.1026023!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
