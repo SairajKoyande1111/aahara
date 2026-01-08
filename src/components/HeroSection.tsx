@@ -32,13 +32,13 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100 drop-shadow-lg">
-            <span className="text-[#7CB342] italic block mb-2">A Celebration of</span>
-            <span className="block text-white">Pure Vegetarian Flavours</span>
+            <span className="text-[#7CB342] italic block mb-2">Aahara — Where Global Flavours</span>
+            <span className="block text-white">Meet Pure Indulgence</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/90 text-lg sm:text-2xl max-w-2xl mx-auto animate-fade-up animation-delay-200 font-medium tracking-wide">
-            Multi-Cuisine • Fresh • Pure Veg
+          <p className="text-white/90 text-lg sm:text-2xl max-w-4xl mx-auto animate-fade-up animation-delay-200 font-medium tracking-wide">
+            Beverages | Burgers | Continental | Pizza | Sushi | Chinese | Japanese | North Indian
           </p>
 
           {/* CTA Buttons */}
