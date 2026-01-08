@@ -8,18 +8,21 @@ const testimonials = [
     text: 'Delicious food, quick service, reasonable price, & nice experience. We ordered Veg Lemon coriander soup, kurkure momos, veg crispy, masala papad, manchurian rice & Ramen noodles. All were very tasty. Ramen was the best.',
     rating: 5,
     role: 'Dinner | ₹400–600',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=150&auto=format&fit=crop'
   },
   {
     name: 'Yash Jadhav',
     text: 'Delicious vegetarian food! The Mushroom Croquettes were crispy, flavorful, and a must-try. Other dishes were equally fresh and tasty. Highly recommend this place!',
     rating: 5,
     role: 'Dinner | ₹400–600',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop'
   },
   {
     name: 'Namrata Mahajan',
     text: 'Very good ambience, tasty delicious japanese food, pot rice, staff and owner are warm welcome.',
     rating: 5,
     role: 'Dinner | ₹1,200–1,400',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&auto=format&fit=crop'
   },
 ];
 
@@ -76,25 +79,10 @@ const TestimonialsSection = () => {
             >
               Don't just take our word for it. Here's what our wonderful guests have to say about their experience.
             </motion.p>
-            
-            <div className="flex justify-center lg:justify-start gap-4 pt-4">
-              <button 
-                onClick={prevSlide}
-                className="w-14 h-14 rounded-full border border-leaf/20 flex items-center justify-center hover:bg-leaf hover:text-white transition-all duration-300"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button 
-                onClick={nextSlide}
-                className="w-14 h-14 rounded-full border border-leaf/20 flex items-center justify-center hover:bg-leaf hover:text-white transition-all duration-300"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
           </div>
 
           {/* Right Side: Carousel */}
-          <div className="lg:w-2/3 relative h-[350px] sm:h-[450px] w-full flex items-center justify-center mt-0 sm:mt-0 lg:mt-0">
+          <div className="lg:w-2/3 relative h-[300px] sm:h-[400px] w-full flex items-center justify-center mt-0 sm:mt-0 lg:mt-0">
             <div className="relative w-full max-w-lg perspective-1000">
               {testimonials.map((testimonial, index) => {
                 const isActive = index === currentIndex;
@@ -111,28 +99,32 @@ const TestimonialsSection = () => {
                     key={testimonial.name}
                     className={`absolute top-1/2 left-0 w-full -translate-y-1/2 transition-all duration-700 ease-in-out ${positionClass}`}
                   >
-                    <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
+                    <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden border border-leaf/5">
                       <div className="absolute top-0 right-0 p-4 sm:p-6 text-leaf/10">
                         <Quote className="w-12 h-12 sm:w-20 sm:h-20 rotate-180" />
                       </div>
                       
-                      <div className="flex gap-1 mb-3 sm:mb-6">
+                      <div className="flex gap-1 mb-4 sm:mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 sm:w-6 sm:h-6 fill-champagne text-champagne" />
                         ))}
                       </div>
 
-                      <p className="text-sm sm:text-lg md:text-xl text-foreground font-medium mb-4 sm:mb-6 leading-relaxed italic line-clamp-6 sm:line-clamp-none">
+                      <p className="text-base sm:text-lg md:text-xl text-foreground font-medium mb-6 sm:mb-8 leading-relaxed italic line-clamp-4 sm:line-clamp-none">
                         "{testimonial.text}"
                       </p>
 
                       <div className="flex items-center gap-3 sm:gap-5">
-                        <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-leaf/10 flex items-center justify-center text-leaf font-bold text-lg sm:text-2xl shadow-inner">
-                          {testimonial.name.charAt(0)}
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-leaf/20 to-leaf/5 flex items-center justify-center text-leaf font-bold text-lg sm:text-2xl shadow-inner overflow-hidden border-2 border-white">
+                          {testimonial.image ? (
+                            <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="relative z-10">{testimonial.name.charAt(0)}</span>
+                          )}
                         </div>
                         <div>
                           <h4 className="text-base sm:text-xl font-bold text-foreground">{testimonial.name}</h4>
-                          <p className="text-leaf font-medium text-[10px] sm:text-sm">{testimonial.role}</p>
+                          <p className="text-leaf font-medium text-xs sm:text-sm uppercase tracking-wider">{testimonial.role}</p>
                         </div>
                       </div>
                     </div>
