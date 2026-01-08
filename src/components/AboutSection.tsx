@@ -120,15 +120,15 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Sliding Visual Strip - No Cards, Just Seamless Images */}
-        <div className="mt-32 relative overflow-hidden h-80">
+        {/* Sliding Visual Strip - Seamless Portrait Images */}
+        <div className="mt-32 relative overflow-hidden h-[600px]">
           <motion.div
-            animate={{ x: [0, -2500] }}
+            animate={{ x: [0, -2250] }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="flex absolute whitespace-nowrap"
           >
             {[...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages].map((img, i) => (
-              <div key={i} className="w-[500px] h-80 flex-shrink-0">
+              <div key={i} className="w-[450px] h-[600px] flex-shrink-0">
                 <img src={img} alt="Dish" className="w-full h-full object-cover" />
               </div>
             ))}
