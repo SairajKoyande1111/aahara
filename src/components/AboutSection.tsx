@@ -41,7 +41,7 @@ const AboutSection = () => {
                   transition={{ delay: 0.5 }}
                   className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20"
                 >
-                  <p className="text-white font-medium text-lg leading-relaxed">
+                  <p className="text-black font-medium text-lg leading-relaxed">
                     "Every dish at Aahara is a story of tradition, crafted with passion and served with love."
                   </p>
                 </motion.div>
