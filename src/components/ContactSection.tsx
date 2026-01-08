@@ -5,7 +5,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 
 const contactInfo = [
   {
@@ -103,53 +102,14 @@ const ContactSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Info Side */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            {/* Contact Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {contactInfo.map((info, index) => (
-                <div key={info.title} className="space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
-                    <info.icon className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900">{info.title}</h4>
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm">
-                    {info.content}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Map Preview */}
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[350px] group">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.89209590515!2d73.1026023!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Aahara Location"
-                className="w-full h-full transition-all duration-700"
-              />
-              <div className="absolute inset-0 pointer-events-none border-[12px] border-white/10 rounded-[2.5rem]" />
-            </div>
-          </motion.div>
-
-          {/* Form Side */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Form Side - First on mobile */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative w-full order-1 lg:order-2"
           >
             <div className="bg-white rounded-[3rem] shadow-2xl p-8 sm:p-12 border border-gray-100">
               {/* Form Tabs */}
@@ -197,7 +157,7 @@ const ContactSection = () => {
 
                 {activeTab === 'reservation' ? (
                   <>
-                    <div className="grid sm:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-gray-700 ml-1">Date</label>
                         <div className="relative">
@@ -291,10 +251,48 @@ const ContactSection = () => {
                 </Button>
               </form>
             </div>
-
             {/* Decoration */}
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#7CB342]/5 rounded-full blur-2xl -z-10" />
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#7CB342]/10 rounded-full blur-3xl -z-10" />
+          </motion.div>
+
+          {/* Info Side - Below form on mobile */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-12 w-full order-2 lg:order-1"
+          >
+            {/* Contact Grid - 4 items in grid */}
+            <div className="grid grid-cols-2 gap-8">
+              {contactInfo.map((info, index) => (
+                <div key={info.title} className="space-y-3">
+                  <div className="w-12 h-12 rounded-2xl bg-[#7CB342]/10 flex items-center justify-center text-[#7CB342]">
+                    <info.icon className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900">{info.title}</h4>
+                  <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm">
+                    {info.content}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Map Preview - Last on mobile */}
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[350px] group">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.89209590515!2d73.1026023!3d19.2215206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958744000001%3A0x6d8594d24f0c608b!2sGNP%20Arcadia!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Aahara Location"
+                className="w-full h-full transition-all duration-700"
+              />
+              <div className="absolute inset-0 pointer-events-none border-[12px] border-white/10 rounded-[2.5rem]" />
+            </div>
           </motion.div>
         </div>
       </div>
