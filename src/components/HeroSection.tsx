@@ -43,7 +43,10 @@ const HeroSection = () => {
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100 drop-shadow-lg">
             <span
               className="text-[#7CB342] italic block mb-2"
-              style={{ WebkitTextStroke: "1px white" }}
+              style={{ 
+                WebkitTextStroke: "1px white",
+                textShadow: "0 0 1px white"
+              }}
             >
               Aahara Where Global Flavours
             </span>
