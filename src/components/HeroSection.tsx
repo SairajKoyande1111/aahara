@@ -87,9 +87,9 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-300 w-full max-w-[320px] sm:max-w-none mx-auto">
+          <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-300 w-full max-w-[350px] sm:max-w-none mx-auto">
             <Button
-              className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-transform hover:scale-105 border-2 border-white"
+              className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-sm sm:text-xl px-4 sm:px-12 py-4 sm:py-8 rounded-full shadow-lg transition-transform hover:scale-105 border-2 border-white flex-1 sm:flex-none"
               size="lg"
               asChild
             >
@@ -97,7 +97,7 @@ const HeroSection = () => {
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white hover:bg-[#7CB342] hover:border-[#7CB342] font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-all hover:scale-105"
+              className="border-2 border-white text-white hover:bg-[#7CB342] hover:border-[#7CB342] font-bold text-sm sm:text-xl px-4 sm:px-12 py-4 sm:py-8 rounded-full shadow-lg transition-all hover:scale-105 flex-1 sm:flex-none"
               size="lg"
               asChild
             >
@@ -106,7 +106,7 @@ const HeroSection = () => {
           </div>
 
           {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 pt-8 sm:pt-12">
+          <div className="flex flex-row flex-nowrap justify-center gap-2 sm:gap-8 pt-8 sm:pt-12 overflow-x-hidden">
             {[
               { text: "100% Pure Veg 🌿", delay: "animation-delay-400" },
               { text: "Multi Cuisine", delay: "animation-delay-500" },
@@ -114,10 +114,10 @@ const HeroSection = () => {
             ].map((item) => (
               <div
                 key={item.text}
-                className={`animate-fade-up ${item.delay} group`}
+                className={`animate-fade-up ${item.delay} group flex-1 min-w-0`}
               >
-                <span className="text-white font-bold text-sm sm:text-xl flex items-center gap-3 drop-shadow-lg bg-white/10 px-6 py-2 sm:px-8 sm:py-3 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-[#7CB342]/20 hover:border-[#7CB342]/50 hover:scale-105">
-                  <span className="w-2 h-2 sm:w-3 sm:h-3 bg-[#7CB342] rounded-full shadow-[0_0_10px_#7CB342] animate-pulse" />
+                <span className="text-white font-bold text-[10px] sm:text-xl flex items-center justify-center gap-1 sm:gap-3 drop-shadow-lg bg-white/10 px-2 py-2 sm:px-8 sm:py-3 rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-[#7CB342]/20 hover:border-[#7CB342]/50 hover:scale-105 whitespace-nowrap">
+                  <span className="w-1.5 h-1.5 sm:w-3 sm:h-3 bg-[#7CB342] rounded-full shadow-[0_0_10px_#7CB342] animate-pulse flex-shrink-0" />
                   {item.text}
                 </span>
               </div>
