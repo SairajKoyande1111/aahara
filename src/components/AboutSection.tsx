@@ -102,7 +102,7 @@ const AboutSection = () => {
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full">
                 Crafting <span className="text-[#7CB342]">Memories</span><br className="hidden lg:block" /> Over Global Plates
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-[550px]">
+              <p className="text-lg text-black leading-relaxed max-w-[550px]">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
               </p>
             </motion.div>
@@ -124,7 +124,7 @@ const AboutSection = () => {
                 >
                   <item.icon className="w-8 h-8 text-[#7CB342] mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  <p className="text-black text-sm">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
