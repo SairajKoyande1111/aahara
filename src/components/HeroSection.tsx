@@ -34,23 +34,11 @@ const HeroSection = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Subtle Tint Overlay */}
         <div className="absolute inset-0 bg-black/25" />
-      </div>
-
-      {/* Floating Decorative Elements */}
-      <div className="absolute top-20 right-10 text-6xl opacity-20 animate-float">
-        🌿
-      </div>
-      <div className="absolute bottom-32 left-10 text-5xl opacity-20 animate-float animation-delay-200">
-        🍃
-      </div>
-      <div className="absolute top-1/3 right-1/4 text-4xl opacity-15 animate-float animation-delay-400">
-        🌱
       </div>
 
       {/* Content */}
