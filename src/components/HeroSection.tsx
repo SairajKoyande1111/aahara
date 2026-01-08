@@ -47,13 +47,13 @@ const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-300 drop-shadow-lg opacity-0 [animation-fill-mode:forwards]">
             <span
-              className="text-[#7CB342] italic block mb-2"
+              className="text-[#7CB342] block mb-2 font-bold"
               style={{
                 WebkitTextStroke: "1px white",
                 textShadow: "0 0 1px white",
               }}
             >
-              Aahara Where Global Flavours
+              Aahara
             </span>
             <span
               className="block text-white"
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 textShadow: "0 0 1px #7CB342",
               }}
             >
-              Meet Pure Indulgence
+              Continental Cuisine
             </span>
           </h1>
 
