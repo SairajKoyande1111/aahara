@@ -54,7 +54,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -top-6 -left-10 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
+              className="absolute -top-6 -left-10 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-50"
             >
               <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="absolute top-24 -left-16 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute top-24 -left-16 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-40"
             >
               <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
             </motion.div>
@@ -75,7 +75,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-10 right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
+              className="absolute -bottom-10 right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-50"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="absolute bottom-20 right-0 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute bottom-20 right-0 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-40"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
