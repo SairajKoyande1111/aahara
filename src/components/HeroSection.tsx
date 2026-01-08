@@ -62,7 +62,7 @@ const HeroSection = () => {
                 textShadow: "0 0 1px #7CB342",
               }}
             >
-              Continental Cuisine
+              Multi Cuisine
             </span>
           </h1>
 
