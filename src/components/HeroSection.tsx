@@ -2,8 +2,25 @@ import { ChevronDown, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
 import heroVideo from "@assets/hero_video.mp4";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Beverages | Burgers | Continental | Pizza | Sushi | Chinese | Japanese | North Indian";
+
+  useEffect(() => {
+    let currentIdx = 0;
+    const timer = setInterval(() => {
+      if (currentIdx <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIdx));
+        currentIdx++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 50);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -50,19 +67,29 @@ const HeroSection = () => {
             >
               Aahara Where Global Flavours
             </span>
-            <span className="block text-white">Meet Pure Indulgence</span>
+            <span 
+              className="block text-white"
+              style={{
+                WebkitTextStroke: "1px #7CB342",
+                textShadow: "0 0 1px #7CB342"
+              }}
+            >
+              Meet Pure Indulgence
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/90 text-lg sm:text-2xl max-w-4xl mx-auto animate-fade-up animation-delay-200 font-medium tracking-wide">
-            Beverages | Burgers | Continental | Pizza | Sushi | Chinese |
-            Japanese | North Indian
-          </p>
+          <div className="min-h-[3em] sm:min-h-[2em] flex items-center justify-center">
+            <p className="text-white/90 text-lg sm:text-2xl max-w-4xl mx-auto font-medium tracking-wide">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </p>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-300 w-full max-w-[320px] sm:max-w-none mx-auto">
             <Button
-              className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-transform hover:scale-105"
+              className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-transform hover:scale-105 border-2 border-white"
               size="lg"
               asChild
             >
@@ -70,7 +97,7 @@ const HeroSection = () => {
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-transform hover:scale-105"
+              className="border-2 border-white text-white hover:bg-[#7CB342] hover:border-[#7CB342] font-bold text-xl px-12 py-8 rounded-full shadow-lg transition-all hover:scale-105"
               size="lg"
               asChild
             >
