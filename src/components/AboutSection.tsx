@@ -54,7 +54,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -top-6 -left-10 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-50"
+              className="absolute -top-6 -left-4 md:-left-10 w-24 h-32 md:w-32 md:h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-50"
             >
               <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
@@ -64,18 +64,18 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="absolute top-24 -left-16 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-40"
+              className="absolute top-24 -left-8 md:-left-16 w-20 h-28 md:w-28 md:h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-40"
             >
               <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
             </motion.div>
 
-            {/* Bottom Right Overlays (2 images) shifted towards left to match top left style */}
+            {/* Bottom Right Overlays (2 images) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: 15, x: 20 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-10 right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-50"
+              className="absolute -bottom-10 right-4 md:right-6 w-28 h-36 md:w-36 md:h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-50"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="absolute bottom-20 right-0 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-40"
+              className="absolute bottom-20 -right-4 md:right-0 w-24 h-32 md:w-32 md:h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-40"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
@@ -99,15 +99,15 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full text-center lg:text-left">
                 Crafting <span className="text-[#7CB342]">Memories</span><br className="hidden lg:block" /> Over Global Plates
               </h2>
-              <p className="text-lg text-black leading-relaxed max-w-[550px]">
+              <p className="text-lg text-black leading-relaxed max-w-[550px] mx-auto lg:mx-0 text-center lg:text-left">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
               {[
                 { icon: Utensils, title: "100% Pure Veg", desc: "No meat, no compromise. Just pure goodness." },
                 { icon: Award, title: "Premium Taste", desc: "Hand-picked ingredients for royal flavours." },
@@ -120,11 +120,11 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="p-6 rounded-2xl bg-white shadow-soft hover:shadow-hover transition-all duration-300 border border-transparent hover:border-[#7CB342]/20 group"
+                  className="p-4 md:p-6 rounded-2xl bg-white shadow-soft hover:shadow-hover transition-all duration-300 border border-transparent hover:border-[#7CB342]/20 group"
                 >
-                  <item.icon className="w-8 h-8 text-[#7CB342] mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                  <p className="text-black text-sm">{item.desc}</p>
+                  <item.icon className="w-6 h-6 md:w-8 md:h-8 text-[#7CB342] mb-3 md:mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-bold text-base md:text-xl mb-1 md:mb-2">{item.title}</h3>
+                  <p className="text-black text-xs md:text-sm">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
