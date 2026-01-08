@@ -29,7 +29,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center gap-4"
             >
-              <div className="w-16 h-16 rounded-full bg-white p-1 shadow-lg">
+              <div className="w-16 h-16 rounded-none p-0">
                 <img 
                   src={logo} 
                   alt="Aahara Logo" 
@@ -130,23 +130,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Strip */}
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/70">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <p>© 2024 Aahara. All rights reserved.</p>
-            <p className="flex items-center gap-1 group">
+        <div className="pt-8 border-t border-white/20 flex flex-col items-center gap-6 text-xs text-white/70">
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-sm">© 2024 Aahara. All rights reserved.</p>
+            <p className="flex items-center justify-center gap-2 group text-base">
               Developed by{' '}
               <a 
                 href="https://www.airavatatechnologies.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-bold text-white hover:underline flex items-center gap-0.5"
+                className="font-bold text-white hover:underline flex items-center gap-1.5"
               >
                 Airavata Technologies
-                <ExternalLink className="w-3 h-3" />
+                <ExternalLink className="w-4 h-4" />
               </a>
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
