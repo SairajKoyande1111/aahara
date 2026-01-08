@@ -62,10 +62,10 @@ const MenuSection = () => {
             <ChefHat className="w-5 h-5" />
             <span className="text-xs font-bold uppercase tracking-[0.2em]">Our Specialities</span>
           </div>
-          <h2 className="font-display text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
             Flavours of <span className="text-[#7CB342]">Aahara</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto px-4">
             Indulge in our handpicked selection of global vegetarian delicacies, crafted with premium ingredients and authentic spices.
           </p>
         </motion.div>
