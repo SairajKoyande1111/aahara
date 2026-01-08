@@ -45,21 +45,21 @@ const HeroSection = () => {
       <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 sm:pt-20">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
           {/* Main Heading */}
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-100 drop-shadow-lg">
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-300 drop-shadow-lg opacity-0 [animation-fill-mode:forwards]">
             <span
               className="text-[#7CB342] italic block mb-2"
-              style={{ 
+              style={{
                 WebkitTextStroke: "1px white",
-                textShadow: "0 0 1px white"
+                textShadow: "0 0 1px white",
               }}
             >
               Aahara Where Global Flavours
             </span>
-            <span 
+            <span
               className="block text-white"
               style={{
                 WebkitTextStroke: "1px #7CB342",
-                textShadow: "0 0 1px #7CB342"
+                textShadow: "0 0 1px #7CB342",
               }}
             >
               Meet Pure Indulgence
@@ -67,7 +67,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <div className="min-h-[3em] sm:min-h-[2em] flex items-center justify-center">
+          <div className="min-h-[3em] sm:min-h-[2em] flex items-center justify-center animate-fade-up animation-delay-500 opacity-0 [animation-fill-mode:forwards]">
             <p className="text-white text-lg sm:text-2xl max-w-4xl mx-auto font-black tracking-wide">
               {displayText}
               <span className="animate-pulse">|</span>
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-300 w-full max-w-[350px] sm:max-w-none mx-auto">
+          <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 pt-6 sm:pt-8 animate-fade-up animation-delay-700 w-full max-w-[350px] sm:max-w-none mx-auto opacity-0 [animation-fill-mode:forwards]">
             <Button
               className="bg-[#7CB342] hover:bg-[#689F38] text-white font-bold text-sm sm:text-xl px-4 sm:px-12 py-4 sm:py-8 rounded-full shadow-lg transition-transform hover:scale-105 border-2 border-white flex-1 sm:flex-none"
               size="lg"
