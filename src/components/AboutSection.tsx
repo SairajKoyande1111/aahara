@@ -12,17 +12,17 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 lg:py-32 bg-cream relative overflow-hidden">
-      <div className="w-full px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="container-custom mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Visual Side: Portrait Video & Overlaid Photos */}
-          <div className="relative group perspective-1000 w-full">
+          <div className="relative group perspective-1000 w-full flex justify-center lg:justify-start">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] w-full max-w-[500px] mx-auto lg:mx-0"
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] w-full max-w-[450px]"
             >
               <video
                 autoPlay
@@ -34,7 +34,7 @@ const AboutSection = () => {
                 <source src={aboutVideo} type="video/mp4" />
               </video>
               
-              <div className="absolute bottom-8 left-8 right-8 z-20">
+              <div className="absolute bottom-8 left-8 right-8 z-30">
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
@@ -54,7 +54,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -top-10 -left-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
+              className="absolute -top-12 -left-8 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
             >
               <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: -20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="absolute top-20 -left-12 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute top-20 -left-16 w-28 h-40 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
             </motion.div>
@@ -75,7 +75,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-6 -right-6 w-40 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
+              className="absolute -bottom-10 -right-4 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
@@ -85,29 +85,29 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="absolute bottom-20 -right-12 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute bottom-16 -right-12 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
           </div>
 
           {/* Content Side */}
-          <div className="space-y-8 lg:pl-12">
+          <div className="space-y-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-6"
             >
-              <h2 className="font-display text-5xl lg:text-7xl font-bold text-foreground leading-tight max-w-[600px]">
+              <h2 className="font-display text-5xl lg:text-7xl font-bold text-foreground leading-tight">
                 Crafting Memories<br className="hidden lg:block" /> Over Global Plates
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-[600px]">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {[
                 { icon: Utensils, title: "100% Pure Veg", desc: "No meat, no compromise. Just pure goodness." },
                 { icon: Award, title: "Premium Taste", desc: "Hand-picked ingredients for royal flavours." },
@@ -120,19 +120,19 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="p-6 rounded-3xl bg-white shadow-soft hover:shadow-hover transition-all duration-300 border border-transparent hover:border-[#7CB342]/20 group"
+                  className="p-8 rounded-3xl bg-white shadow-soft hover:shadow-hover transition-all duration-300 border border-transparent hover:border-[#7CB342]/20 group"
                 >
-                  <item.icon className="w-10 h-10 text-[#7CB342] mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  <item.icon className="w-10 h-10 text-[#7CB342] mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-bold text-2xl mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-base">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Sliding Visual Strip - Seamless Full-Width Portrait Images */}
       </div>
+
+      {/* Sliding Visual Strip - Seamless Full-Width Portrait Images */}
       <div className="mt-32 relative overflow-hidden h-[600px] w-full">
         <motion.div
           animate={{ x: [0, -2250] }}
