@@ -69,13 +69,13 @@ const AboutSection = () => {
               <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
             </motion.div>
 
-            {/* Bottom Right Overlays (2 images) */}
+            {/* Bottom Right Overlays (2 images) shifted towards left to match top left style */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: 15, x: 20 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-10 -right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
+              className="absolute -bottom-10 right-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-20"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="absolute bottom-20 -right-14 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+              className="absolute bottom-20 right-0 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
@@ -100,7 +100,7 @@ const AboutSection = () => {
               className="space-y-4"
             >
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full">
-                Crafting <span className="text-[#7CB342]">Memories</span><br /> Over Global Plates
+                Crafting <span className="text-[#7CB342]">Memories</span><br className="hidden lg:block" /> Over Global Plates
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-[550px]">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
