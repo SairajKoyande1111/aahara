@@ -1,62 +1,63 @@
 import { motion } from 'framer-motion';
-import { Leaf, Instagram, Facebook, Twitter, Youtube, Heart } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, ChevronRight, Leaf } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Menu', href: '#menu' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Our Menu', href: '#menu' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:bg-[#E4405F]' },
+  { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:bg-[#1877F2]' },
+  { icon: Youtube, href: '#', label: 'YouTube', color: 'hover:bg-[#FF0000]' },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#7CB342] text-[#fdfcf0] overflow-hidden">
-      <div className="container-custom mx-auto px-6 sm:px-12 lg:px-16 py-8 md:py-12 pb-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
-        >
-          {/* Brand */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full overflow-hidden shadow-gold border-2 border-white/20">
+    <footer className="bg-[#1A1A1A] text-white pt-20 pb-10 overflow-hidden relative">
+      {/* Decorative Element */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#7CB342] to-transparent opacity-30" />
+      
+      <div className="container-custom mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Identity */}
+          <div className="space-y-8">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-white p-1 shadow-lg shadow-black/20">
                 <img 
                   src={logo} 
                   alt="Aahara Logo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h3 className="font-display text-2xl font-bold">Aahara</h3>
-                <p className="text-xs text-[#fdfcf0]/80 uppercase tracking-wider">
-                  Pure Veg Multi Cuisine • Est. 2024
+                <h3 className="font-display text-3xl font-bold tracking-tight text-[#7CB342]">Aahara</h3>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-semibold">
+                  Pure Veg Multi Cuisine
                 </p>
               </div>
-            </div>
-            <p className="text-[#fdfcf0]/90 max-w-md leading-relaxed">
-              Shop No.04, GNP Arcadia, opp. to Pendharkar College, Sudarshan Nagar, Dombivli East, Maharashtra 421203
-            </p>
+            </motion.div>
             
-            {/* Social Links */}
-            <div className="flex gap-3">
+            <p className="text-gray-400 leading-relaxed text-sm">
+              Experience the authentic flavors of multi-cuisine vegetarian excellence. We bring together tradition and taste in every dish we serve.
+            </p>
+
+            <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  aria-label={social.label}
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#fdfcf0] hover:text-[#7CB342] transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  className={`w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-all duration-300 ${social.color} hover:shadow-lg`}
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -64,19 +65,40 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-lg font-semibold mb-6 text-[#fdfcf0]">
-              Quick Links
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold font-display border-b border-[#7CB342]/30 pb-2 inline-block">
+              Visit Us
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
+              <li className="flex gap-3 text-sm text-gray-400 group">
+                <MapPin className="w-5 h-5 text-[#7CB342] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span>Shop No.04, GNP Arcadia, opp. to Pendharkar College, Dombivli East, 421203</span>
+              </li>
+              <li className="flex gap-3 text-sm text-gray-400 group">
+                <Phone className="w-5 h-5 text-[#7CB342] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="tel:+919876543210" className="hover:text-white transition-colors">+91 98765 43210</a>
+              </li>
+              <li className="flex gap-3 text-sm text-gray-400 group">
+                <Mail className="w-5 h-5 text-[#7CB342] flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="mailto:hello@aahara.com" className="hover:text-white transition-colors">hello@aahara.com</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold font-display border-b border-[#7CB342]/30 pb-2 inline-block">
+              Navigation
+            </h4>
+            <ul className="grid grid-cols-1 gap-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-[#fdfcf0]/80 hover:text-[#fdfcf0] transition-colors duration-300 flex items-center gap-2"
+                    className="text-gray-400 hover:text-[#7CB342] text-sm flex items-center gap-2 group transition-all duration-300"
                   >
-                    <span className="w-1 h-1 bg-[#fdfcf0]/50 rounded-full" />
+                    <ChevronRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {link.name}
                   </a>
                 </li>
@@ -84,50 +106,40 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Opening Hours */}
-          <div>
-            <h4 className="font-display text-lg font-semibold mb-6 text-[#fdfcf0]">
-              Opening Hours
+          {/* Business Hours */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold font-display border-b border-[#7CB342]/30 pb-2 inline-block">
+              Hours
             </h4>
-            <ul className="space-y-3 text-[#fdfcf0]/80">
-              <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span className="text-[#fdfcf0]">11 AM - 11 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span className="text-[#fdfcf0]">10 AM - 12 AM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span className="text-[#fdfcf0]">10 AM - 11 PM</span>
-              </li>
-            </ul>
-            
-            <div className="mt-6 p-4 bg-white/10 rounded-xl border border-white/20">
-              <p className="text-sm text-[#fdfcf0] font-medium">
-                🎉 Special Weekend Brunch
-              </p>
-              <p className="text-xs text-[#fdfcf0]/80 mt-1">
-                Saturdays & Sundays, 10 AM - 1 PM
-              </p>
+            <div className="space-y-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Mon - Fri</span>
+                <span className="font-medium text-[#7CB342]">11 AM - 11 PM</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Saturday</span>
+                <span className="font-medium text-[#7CB342]">10 AM - 12 AM</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Sunday</span>
+                <span className="font-medium text-[#7CB342]">10 AM - 11 PM</span>
+              </div>
+              <div className="pt-2 mt-2 border-t border-white/10 flex items-center gap-2 text-[10px] text-[#7CB342] uppercase tracking-tighter font-bold">
+                <Leaf className="w-3 h-3" />
+                <span>100% Pure Vegetarian</span>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Bottom Bar */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="pt-4 border-t border-white/10"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#fdfcf0]/60 text-sm">
-              © 2024 Aahara – Pure Veg Multi Cuisine. All rights reserved.
-            </p>
+        {/* Bottom Strip */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <p>© 2024 Aahara. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
