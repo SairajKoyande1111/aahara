@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fresh Leaf Green & Champagne Gold Theme */
+    --background: 45 30% 98%;
+    --foreground: 88 15% 15%;
+
+    --card: 45 25% 96%;
+    --card-foreground: 88 15% 15%;
+
+    --popover: 45 25% 96%;
+    --popover-foreground: 88 15% 15%;
+
+    /* Fresh Leaf Green (#7cb342) */
+    --primary: 88 46% 54%;
+    --primary-foreground: 45 30% 98%;
+
+    /* Champagne Gold */
+    --secondary: 42 45% 59%;
+    --secondary-foreground: 88 15% 15%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 88 10% 40%;
+
+    /* Soft Gold Accent */
+    --accent: 42 50% 65%;
+    --accent-foreground: 88 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 30% 98%;
+
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 88 46% 54%;
+
+    --radius: 0.75rem;
+
+    /* Custom Restaurant Colors */
+    --leaf-green: 88 46% 54%;
+    --leaf-green-light: 88 50% 65%;
+    --leaf-green-dark: 88 46% 35%;
+    --champagne: 42 45% 59%;
+    --champagne-light: 42 50% 75%;
+    --champagne-dark: 42 40% 45%;
+    --cream: 45 30% 98%;
+    --cream-dark: 45 25% 92%;
+    --warm-brown: 25 30% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(88 46% 54% / 0.9), hsl(88 46% 35% / 0.95));
+    --gradient-gold: linear-gradient(135deg, hsl(42 45% 59%), hsl(42 50% 70%));
+    --gradient-soft: linear-gradient(180deg, hsl(45 30% 98%), hsl(45 25% 94%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(88 46% 54% / 0.12);
+    --shadow-gold: 0 4px 20px -4px hsl(42 45% 59% / 0.25);
+    --shadow-card: 0 8px 30px -8px hsl(88 15% 15% / 0.1);
+    --shadow-hover: 0 12px 40px -12px hsl(88 46% 54% / 0.2);
+
+    --sidebar-background: 45 30% 98%;
+    --sidebar-foreground: 88 15% 15%;
+    --sidebar-primary: 88 46% 54%;
+    --sidebar-primary-foreground: 45 30% 98%;
+    --sidebar-accent: 42 45% 59%;
+    --sidebar-accent-foreground: 88 15% 15%;
+    --sidebar-border: 45 20% 88%;
+    --sidebar-ring: 88 46% 54%;
+  }
+
+  .dark {
+    --background: 88 20% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 88 18% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 88 18% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 88 46% 54%;
+    --primary-foreground: 88 20% 8%;
+
+    --secondary: 42 50% 55%;
+    --secondary-foreground: 88 20% 8%;
+
+    --muted: 88 15% 18%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 42 45% 50%;
+    --accent-foreground: 88 20% 8%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 88 15% 20%;
+    --input: 88 15% 20%;
+    --ring: 88 46% 54%;
+
+    --sidebar-background: 88 20% 10%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 88 46% 54%;
+    --sidebar-primary-foreground: 88 20% 8%;
+    --sidebar-accent: 42 50% 55%;
+    --sidebar-accent-foreground: 88 20% 8%;
+    --sidebar-border: 88 15% 20%;
+    --sidebar-ring: 88 46% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-8 sm:px-12 lg:px-16 py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .leaf-decoration {
+    @apply relative;
+  }
+
+  .leaf-decoration::before {
+    content: '🌿';
+    @apply absolute -left-8 top-1/2 -translate-y-1/2 text-2xl opacity-60;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--leaf-green-light));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--leaf-green));
+}
