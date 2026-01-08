@@ -102,13 +102,15 @@ const GallerySection = () => {
           className="text-center mt-16"
         >
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/_aahara/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-gray-600 hover:text-[#7CB342] transition-colors font-medium"
+            className="inline-flex items-center gap-4 text-gray-700 hover:text-[#7CB342] transition-all hover:scale-105 font-semibold text-lg"
           >
-            <Instagram className="w-5 h-5" />
-            Follow us for more updates @aahara
+            <div className="p-2 rounded-xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] shadow-lg shadow-purple-500/20">
+              <Instagram className="w-8 h-8 text-white" />
+            </div>
+            Follow us for more updates @_aahara
           </a>
         </motion.div>
       </div>
