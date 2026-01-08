@@ -99,8 +99,8 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] max-w-[500px]">
-                Crafting <span className="text-[#7CB342]">Memories</span><br /> Over Global Plates
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] w-full whitespace-nowrap lg:whitespace-normal">
+                Crafting <span className="text-[#7CB342]">Memories</span><br className="hidden lg:block" /> Over Global Plates
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-[550px]">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
