@@ -60,17 +60,17 @@ const MenuSection = () => {
         >
           <div className="inline-flex items-center gap-2 text-[#7CB342] bg-[#7CB342]/10 px-4 py-2 rounded-full">
             <ChefHat className="w-5 h-5" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em]">Signature Creations</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em]">Our Specialities</span>
           </div>
           <h2 className="font-display text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            From Farm to <span className="text-[#7CB342]">Plate</span>
+            Flavours of <span className="text-[#7CB342]">Aahara</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Experience the art of pure vegetarian cooking. Each dish is a masterpiece of flavor and tradition.
+            Indulge in our handpicked selection of global vegetarian delicacies, crafted with premium ingredients and authentic spices.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
           {menuCategories.map((category, index) => (
             <motion.div
               key={category.name}
@@ -80,7 +80,7 @@ const MenuSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative h-[450px] rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              className="group relative h-[500px] rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               <motion.div 
                 className="relative w-full h-full"
