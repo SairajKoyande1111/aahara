@@ -43,14 +43,6 @@ const menuCategories = [
     description: 'Refreshing rose-infused milkshake with a touch of sweetness.',
     tag: 'Signature'
   },
-  { 
-    name: 'Vegetable Sushi', 
-    image: '/attached_assets/stock_images/premium_vegetarian_s_f582cd3b.jpg',
-    price: '₹399',
-    description: 'Fresh, hand-rolled vegetarian sushi with premium ingredients.',
-    tag: 'Gourmet',
-    mobileOnly: true
-  },
 ];
 
 const MenuSection = () => {
@@ -88,7 +80,7 @@ const MenuSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative h-[500px] rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer ${category.mobileOnly ? 'md:hidden' : ''}`}
+              className="group relative h-[500px] rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               <motion.div 
                 className="relative w-full h-full"
