@@ -47,10 +47,11 @@ const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-300 drop-shadow-lg opacity-0 [animation-fill-mode:forwards]">
             <span
-              className="text-[#7CB342] block mb-2 font-bold"
+              className="text-[#7CB342] block mb-2 font-bold text-5xl sm:text-7xl lg:text-8xl italic font-serif"
               style={{
                 WebkitTextStroke: "1px white",
-                textShadow: "0 0 1px white",
+                textShadow: "0 0 2px white",
+                fontFamily: "cursive",
               }}
             >
               Aahara
