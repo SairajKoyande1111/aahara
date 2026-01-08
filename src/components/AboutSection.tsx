@@ -11,18 +11,18 @@ const AboutSection = () => {
   const carouselImages = [kebabImg, paneerImg, pastaImg, kajuMasalaImg, roseMilkImg];
 
   return (
-    <section id="about" className="section-padding bg-cream relative overflow-hidden">
-      <div className="container-custom mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="about" className="py-20 lg:py-32 bg-cream relative overflow-hidden">
+      <div className="w-full px-4 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Visual Side: Portrait Video & Overlaid Photos */}
-          <div className="relative group perspective-1000">
+          <div className="relative group perspective-1000 w-full">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] md:w-[80%] mx-auto"
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl bg-black aspect-[3/4] w-full max-w-[500px] mx-auto lg:mx-0"
             >
               <video
                 autoPlay
@@ -34,7 +34,7 @@ const AboutSection = () => {
                 <source src={aboutVideo} type="video/mp4" />
               </video>
               
-              <div className="absolute bottom-8 left-8 right-8">
+              <div className="absolute bottom-8 left-8 right-8 z-20">
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
@@ -48,48 +48,59 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            {/* Overlaid Photos */}
+            {/* Top Left Overlays (2 images) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: -15, x: -20 }}
               whileInView={{ opacity: 1, scale: 1, rotate: -10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute top-10 -left-6 w-40 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
+              className="absolute -top-10 -left-6 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
             >
               <img src={kajuMasalaImg} alt="Kaju Masala" className="w-full h-full object-cover" />
             </motion.div>
 
             <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -25, x: -40 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -20, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="absolute top-20 -left-12 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
+            >
+              <img src={pastaImg} alt="Pasta" className="w-full h-full object-cover" />
+            </motion.div>
+
+            {/* Bottom Right Overlays (2 images) */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: 15, x: 20 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 10, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute -bottom-6 -right-6 w-44 h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
+              className="absolute -bottom-6 -right-6 w-40 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden md:block z-10"
             >
               <img src={roseMilkImg} alt="Rose Milkshake" className="w-full h-full object-cover" />
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: 25, x: 40 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 20, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="absolute top-1/2 -right-12 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10 -translate-y-1/2"
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="absolute bottom-20 -right-12 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden lg:block z-10"
             >
               <img src={paneerImg} alt="Paneer Tikka" className="w-full h-full object-cover" />
             </motion.div>
           </div>
 
           {/* Content Side */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:pl-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="font-display text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                Crafting <span className="text-[#7CB342] italic">Memories</span> Over Global Plates
+              <h2 className="font-display text-5xl lg:text-7xl font-bold text-foreground leading-tight max-w-[600px]">
+                Crafting Memories<br className="hidden lg:block" /> Over Global Plates
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Aahara is more than just a restaurant; it's a celebration of pure vegetarian culinary excellence. From the streets of Tokyo to the hearths of North India, we bring the world's most beloved flavours to your table.
@@ -120,20 +131,20 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Sliding Visual Strip - Seamless Portrait Images */}
-        <div className="mt-32 relative overflow-hidden h-[600px]">
-          <motion.div
-            animate={{ x: [0, -2250] }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="flex absolute whitespace-nowrap"
-          >
-            {[...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages].map((img, i) => (
-              <div key={i} className="w-[450px] h-[600px] flex-shrink-0">
-                <img src={img} alt="Dish" className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Sliding Visual Strip - Seamless Full-Width Portrait Images */}
+      </div>
+      <div className="mt-32 relative overflow-hidden h-[600px] w-full">
+        <motion.div
+          animate={{ x: [0, -2250] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="flex absolute whitespace-nowrap"
+        >
+          {[...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages, ...carouselImages].map((img, i) => (
+            <div key={i} className="w-[450px] h-[600px] flex-shrink-0">
+              <img src={img} alt="Dish" className="w-full h-full object-cover" />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
