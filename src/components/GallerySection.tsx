@@ -8,7 +8,7 @@ const galleryVideos = [
     category: 'Kitchen'
   },
   { 
-    src: '/attached_assets/🚨‼️WAIT_TILL_END_‼️🚨#food_#foodie_#foodporn_#foodstagram_#in_1767851076761.mp4', 
+    src: '/attached_assets/hero_video.mp4', 
     title: 'Food Experience',
     category: 'Vibe'
   },
@@ -79,13 +79,6 @@ const GallerySection = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500" />
               
-              {/* Floating Badge */}
-              <div className="absolute top-6 right-6">
-                <div className="bg-white/20 backdrop-blur-md p-3 rounded-full border border-white/30">
-                  <Play className="w-4 h-4 text-white fill-white" />
-                </div>
-              </div>
-
               {/* Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <span className="text-[#7CB342] text-xs font-bold uppercase tracking-widest mb-2">
