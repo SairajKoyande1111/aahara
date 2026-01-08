@@ -42,15 +42,15 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 sm:pt-20">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+      <div className="relative z-10 container-custom mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 sm:pt-16">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight animate-fade-up animation-delay-300 drop-shadow-lg opacity-0 [animation-fill-mode:forwards]">
             <span
-              className="text-[#7CB342] block mb-2 font-black text-6xl sm:text-8xl lg:text-9xl italic font-serif"
+              className="text-[#7CB342] block mb-1 font-black text-6xl sm:text-8xl lg:text-9xl italic"
               style={{
                 textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
-                fontFamily: "cursive",
+                fontFamily: "'Dancing Script', cursive",
               }}
             >
               Aahara
